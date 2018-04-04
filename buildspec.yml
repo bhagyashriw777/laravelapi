@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing Composer Dependencies...
+      - composer install --optimize-autoloader --no-dev
+  pre_build:
+    commands:
+      - echo In Pre-Build...
+  build:
+    commands:
+      - echo Build Step Completed on `date`
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+    files:
+        - '**/*'
